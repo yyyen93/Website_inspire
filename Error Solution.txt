@@ -1,0 +1,23 @@
+https://www.youtube.com/watch?v=p1GmFCGuVjw
+
+
+Error Solution:
+
+1) Email label is overlapping to input field.
+Solution: 
+
+In html: Add empty placeholder 'placeholder=""' to input field.
+In css: Add '.input-box input:not(:placeholder-shown)~label'
+
+Actual Code:
+    html:
+    <input type="email" name="email" id="email" required placeholder=" " />
+
+    css:
+    .input-box input:focus~label,
+    .input-box input:valid~label,
+    .input-box input:not(:placeholder-shown)~label {
+        top: -5px;
+    }
+
+Explanation: The input-box input:not(:placeholder-shown)~label selector is added to ensure that the label moves up when there is any content in the input, not just when it's focused or valid. This helps when users start typing in the input field without focusing it.
