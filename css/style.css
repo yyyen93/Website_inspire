@@ -140,7 +140,9 @@ header {
 
 .input-box input:focus~label,
 .input-box input:valid~label,
+/* fixed label overlapping input field */
 .input-box input:not(:placeholder-shown)~label {
+    
     top: -5px;
 }
 
