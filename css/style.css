@@ -165,3 +165,27 @@ header {
     color: #fff;
     line-height: 57px;
 }
+
+
+.remember-forgot{
+    font-size: .9em;
+    color: #fff;
+    font-weight:500;
+    margin: -15px 0 15px;
+    display:flex;
+    justify-content:space-between;
+}
+
+.remember-forgot label input{
+    accent-color: #fff;
+    margin-right: 3px;
+}
+
+.remember-forgot a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.remember-forget a:hover{
+    text-decoration: underline;
+}
