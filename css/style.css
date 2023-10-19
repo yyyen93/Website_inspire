@@ -74,7 +74,7 @@ header {
     width: 130px;
     height: 50px;
     background: transparent;
-    border: 2px solid #fff;
+    /* border: 2px solid #fff; */
     outline: none;
     border-radius: 6px;
     cursor: pointer;
@@ -82,13 +82,13 @@ header {
     color: #fff;
     font-weight: 500;
     margin-left: 40px;
-    transition: .5s;
+    transition: .3s;
 }
 
 
 .navigation .btnLogin:hover {
-    background: #fff;
-    color: #162838;
+    background: rgba(0,0,0,0.5);
+    color: #fff;
 }
 
 
@@ -108,6 +108,18 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow:hidden;
+    transform:scale(0);
+    transition: transform .5s ease,height .2s ease;
+}
+
+.wrapper.active-popup{
+    transform: scale(1);
+}
+
+.wrapper.active{
+    height:520px;
+    
 }
 
 .wrapper .form-box {
@@ -119,19 +131,43 @@ header {
     position:absolute;
     top:0;
     right:0;
-    width:0px;
+    width:40px;
     height:40px;
-    background: #fff;
-    color:black;
-    font-size:2em;
+    background:#fff;
     display:flex;
     justify-content:center;
     align-items:center;
-    border-bottom-left-radius:20px;
-    border-top-right-radius:20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
     cursor:pointer;
     z-index:1;
+    
 }
+
+.wrapper .form-box.login{
+    /* display:none; */
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+.wrapper.active .form-box.login{
+    transition:none;
+    transform:translateX(-400px);
+}
+
+.wrapper .form-box.register{
+    position:absolute;
+    transition: none;
+    transform:translateX(400px);
+}
+
+.wrapper.active .form-box.register{
+    transition: transform .18s ease;
+    transform: translateX(0);
+}
+
+
+
 
 .form-box h2 {
     font-size: 2em;
@@ -243,4 +279,7 @@ header {
     text-decoration: underline;
 }
 
+
+
+/* ----------------------- */
 
